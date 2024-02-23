@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: stg_accounts
+    description: modelo contando os dados limpos da tabela de contas
+    columns:
+      - name: account_id
+        description: chave primária da tabela
+        tests:
+          - unique
+          - not_null
+      - name: status
+        tests:
+            - accepted_values: 
+                values: ['active', 'inactive']
+      - name: customer_id
+        description: chave estrangeira para a tabela de clientes
+        tests:
+          - unique
+          - not_null
+          - relationships: 
+              to: ref('stg_customer')
+              field: customer_id
+        

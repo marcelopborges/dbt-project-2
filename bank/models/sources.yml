@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: mysql
+    database: postgres  
+    schema: transacional
+    tables:
+      - name: accounts
+      - name: customers
