@@ -21,4 +21,5 @@ models:
           - relationships: 
               to: ref('stg_customer')
               field: customer_id
-        
+      - name: stg_customers
+        description: modelo contendo os dados limpos da tabela de clientes
